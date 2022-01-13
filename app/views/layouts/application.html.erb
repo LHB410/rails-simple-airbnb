@@ -8,9 +8,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <nav class="navbar sticky-top navbar-dark bg-dark justify-content-between">
+      <%= link_to "AirBnB Lite", flats_path, class: "btn btn-outline-light btn-lg"  %>
+      <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-light"  %>
+    </nav>
     <%= yield %>
   </body>
 </html>

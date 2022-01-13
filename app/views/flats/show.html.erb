@@ -1,0 +1,12 @@
+<div class= "container">
+  <div class= "card">
+    <h2><%= @flat.name.capitalize %></h2>
+    <h3><%= @flat.address %></h3>
+    <p><%= @flat.description %></p>
+    <h5><%= @flat.price_per_night %></h5>
+    <h5><%= @flat.number_of_guests %></h5>
+    <%= link_to "Edit", edit_flat_path  %>
+    <%= link_to "Remove", flat_path, method: 'delete', data: { confirm: "Are you sure?" }  %>
+    <%= link_to "Back", flats_path %>
+  </div>
+</div>

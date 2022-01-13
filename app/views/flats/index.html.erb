@@ -1,0 +1,24 @@
+<div class= "container">
+  <h1 class= "title"> Our flats for rent</h1>
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class= "card my-3 p-2">
+          <h2><%= flat.name.capitalize %></h2>
+          <h3><%= flat.address %></h3>
+          <p><%= flat.description.capitalize.truncate(100) %></p>
+          <h5><i class="fas fa-dollar-sign"></i><%= flat.price_per_night %>
+          <i class="fas fa-users"></i><%= flat.number_of_guests %></h5>
+
+          <ul class="list-inline">
+            <li class="list-inline-item"><%= link_to "See more info", flat_path(flat), class: "btn btn-outline-primary"  %></li>
+            <li class="list-inline-item"><%= link_to "Remove", flat_path(flat), class: "btn btn-outline-warning",  method: 'delete', data: { confirm: "Are you sure?" }  %></li>
+            <li class="list-inline-item"><%= link_to "Back", flats_path, class: "btn btn-outline-danger" %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
