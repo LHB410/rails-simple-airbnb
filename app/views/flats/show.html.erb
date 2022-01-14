@@ -1,12 +1,49 @@
+<div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @flat.image_url %>);">
+  <div class="container">
+    <h1 class= "title"> About <%= @flat.name.capitalize %></h1>
+  </div>
+</div>
 <div class= "container">
-  <div class= "card">
-    <h2><%= @flat.name.capitalize %></h2>
-    <h3><%= @flat.address %></h3>
-    <p><%= @flat.description %></p>
-    <h5><%= @flat.price_per_night %></h5>
-    <h5><%= @flat.number_of_guests %></h5>
-    <%= link_to "Edit", edit_flat_path  %>
-    <%= link_to "Remove", flat_path, method: 'delete', data: { confirm: "Are you sure?" }  %>
-    <%= link_to "Back", flats_path %>
+  <div class="row">
+    <div class="col-8">
+      <div class= "show-card p-2">
+        <h2><%= @flat.name.capitalize %></h2>
+        <h3><%= @flat.address %></h3>
+        <p><%= @flat.description %></p>
+        <ul class="list-inline" id= "show-buttons">
+            <li class="list-inline-item"><%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-outline-warning" %></li>
+            <li class="list-inline-item"><%= link_to "Back", flats_path, class: "btn btn-outline-danger" %></li>
+        </ul>
+      </div>
+      <div class="card-desc my-3 p-2">
+        <h4>A bit about this flat</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, veniam quas, labore dolorum sint hic magnam perspiciatis cupiditate, maxime quod voluptates quam fugiat distinctio eaque tenetur adipisci. Reprehenderit, harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae nihil qui repellat minima optio quo quisquam nemo ad facere suscipit at omnis voluptas, cumque ratione libero inventore. Molestias, earum!</p>
+        <%= image_tag (@flat.image_url), class: "show-image" %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card h-25 my-4 p-2" >
+        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+          <label for="example">From</label>
+          <i class="fas fa-calendar input-prefix"></i>
+          <input placeholder="Select date" type="text" id="example" class="form-control">
+          <label for="example">To</label>
+          <i class="fas fa-calendar input-prefix"></i>
+          <input placeholder="Select date" type="text" id="example" class="form-control">
+        </div>
+      </div>
+      <div class="card h-25">
+        <h3 class= 'mb-3 mt-1 pl-1'>Details</h3>
+        <h5><i class="fas fa-dollar-sign"></i><%= @flat.price_per_night %>
+        <i class="fas fa-users"></i><%= @flat.number_of_guests %></h5>
+        <hr>
+        <h3 class= "pl-1 my-1">Share</h3>
+        <ul class= "list-inline" id= "socials">
+          <li class="list-inline-item"><i class="fab fa-twitter-square"></i></li>
+          <li class="list-inline-item"><i class="fab fa-facebook-square"></i></li>
+          <li class="list-inline-item"><i class="fab fa-instagram-square"></i></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

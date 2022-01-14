@@ -22,10 +22,32 @@ html {
 .card {
   display: flex;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 460px;
 }
+
+.show-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 200px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.card-desc {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: auto;
+  background-color: white;
+  border-radius: 4px;
+}
+
+ul.list-inline {
+  position: absolute;
+  bottom: 0;
+}
+
 
 .fa-dollar-sign {
   padding-left: 8px;
+  padding-right: 1px;
 }
 
 .fa-users {
@@ -33,4 +55,42 @@ html {
   padding-right: 2px;
 }
 
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
 
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 56px;
+  font-weight: bold;
+}
+.image {
+  object-fit: cover;
+  height: 150px;
+  width: 100%;
+}
+
+.show-image {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.card-info {
+  padding: 8px;
+}
+
+#socials {
+  display: flex;
+  margin: 8px;
+  color: purple;
+  font-size: 32px;
+}
+
+.card > hr {
+  margin: 0;
+}
