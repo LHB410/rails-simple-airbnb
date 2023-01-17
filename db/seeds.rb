@@ -22,9 +22,9 @@ flat_images = Unsplash::Photo.search("apartment interiors", 1, 100)
 10.times do |flat|
   flat_images.each do |image_url|
    Flat.create(
-     name: Faker::Emotion.adjective + " Flat",
+     name: Faker::Adjective.positive + " " + ["Flat", "Apartment", "House", "Suite"].sample,
      address: Faker::Address.full_address,
-     description: Faker::Lorem.sentence(word_count: 12),
+     description: Faker::Lorem.sentence(word_count: 20),
      price_per_night: Faker::Number.within(range: 50..150),
      number_of_guests: Faker::Number.within(range: 2..8),
      image_url: image_url.urls.regular
